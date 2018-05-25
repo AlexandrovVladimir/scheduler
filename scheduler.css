@@ -1,0 +1,158 @@
+* {
+  box-sizing: border-box;
+}
+html {
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+}
+body {
+  background-color: #edf2f5 !important;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+img {
+  width: 15px;
+  height: 15px;
+  filter: sepia(100%) hue-rotate(190deg) saturate(500%);
+}
+.text {
+  color: #909eb0;
+  font-size: 14px;
+}
+.text__main {
+  color: #2c3846;
+  font-size: 18px;
+}
+.scheduler {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  padding: 1rem;
+}
+.scheduler__left,
+.scheduler__right {
+  flex: 0 0 50%;
+}
+.scheduler__right {
+  padding-left: 1rem;
+}
+.scheduler__left {
+  padding-right: 1rem;
+}
+.scheduler__item {
+  padding-bottom: 5px;
+}
+.scheduler__item.over {
+  border: 2px gray dashed;
+}
+.scheduler__row {
+  background-color: #fff;
+  border: 1px solid transparent;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  align-items: center;
+  min-height: 50px;
+  position: relative;
+}
+.scheduler .enter {
+  border: 2px dashed #566577;
+}
+.scheduler .leave {
+  background: purple;
+}
+.scheduler__title {
+  font-size: 24px;
+  color: #566577;
+  line-height: 1.583;
+  padding: 1rem 0;
+}
+.scheduler__name {
+  flex-basis: 30%;
+  padding: 1rem;
+}
+.scheduler__name .text__main {
+  display: block;
+  margin: 0;
+}
+.scheduler__time,
+.scheduler__date,
+.scheduler__actions {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.scheduler__time img,
+.scheduler__date img,
+.scheduler__actions img {
+  margin-right: 5px;
+}
+.scheduler__date {
+  border-left: 1px solid #eee;
+  padding: 1rem;
+}
+.scheduler__date .time {
+  margin-left: 5px;
+}
+.scheduler__edit {
+  cursor: pointer;
+  padding: 0 2rem;
+  border-left: 1px solid #eee;
+  height: 39px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.success {
+  border-left: 2px solid green;
+}
+.now {
+  border-left: 2px solid blue;
+}
+.later {
+  border-left: 2px solid red;
+}
+.done {
+  border-left: 2px solid orangered;
+}
+table.table-striped tbody tr:nth-of-type(odd) {
+  background-color: #fff;
+}
+table.table-striped tbody tr:nth-of-type(even) {
+  background-color: #f9fbfd;
+}
+.table tr td {
+  height: 50px;
+}
+.table tr td .scheduler__row {
+  cursor: pointer;
+}
+.table tr td .scheduler__edit {
+  padding: 0 1rem;
+}
+.table tr td .text {
+  font-size: 10px;
+}
+.table tr td .text__main {
+  font-size: 10px;
+}
+.table tr td .table-wrapper {
+  min-height: 50px;
+}
+.table tr .over {
+  border: 2px dashed gray;
+}
+.dragzone {
+  cursor: move;
+  position: absolute;
+  top: -5px;
+  left: 7.5px;
+}
+.dragzone img {
+  filter: contrast(100%);
+}

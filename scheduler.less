@@ -1,0 +1,172 @@
+@import 'variables';
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #edf2f5 !important;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+img {
+  width: 15px;
+  height: 15px;
+  filter: sepia(100%) hue-rotate(190deg) saturate(500%);
+}
+
+.text {
+  color: @text-color;
+  font-size: 14px;
+  &__main {
+    color: @main-text-color;
+    font-size: 18px;
+  }
+}
+
+.scheduler {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  padding: 1rem;
+  &__left, &__right {
+    flex: 0 0 50%;
+  }
+  &__right {
+    padding-left: 1rem;
+  }
+  &__left {
+    padding-right: 1rem;
+  }
+  &__item {
+    padding-bottom: 5px;
+  }
+  &__item.over {
+    border: 2px gray dashed;
+  }
+  &__row {
+    background-color: #fff;
+    border: 1px solid transparent;
+    //cursor: move;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    align-items: center;
+    min-height: 50px;
+    position: relative;
+  }
+  .enter {
+    border: 2px dashed #566577;
+  }
+  .leave {
+    background: purple;
+  }
+  &__title {
+    font-size: 24px;
+    color: rgb(86, 101, 119);
+    line-height: 1.583;
+    padding: 1rem 0;
+  }
+  &__name {
+    flex-basis: 30%;
+    padding: 1rem;
+    .text__main {
+      display: block;
+      margin: 0;
+    }
+  }
+  &__time, &__date, &__actions {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    img {
+      margin-right: 5px;
+    }
+  }
+  &__date {
+    border-left: 1px solid #eee;
+    padding: 1rem;
+    .time {
+      margin-left: 5px;
+    }
+  }
+  &__edit {
+    cursor: pointer;
+    padding: 0 2rem;
+    border-left: 1px solid #eee;
+    height: 39px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.success {
+  border-left: 2px solid green;
+}
+.now {
+  border-left: 2px solid blue;
+}
+.later {
+  border-left: 2px solid red;
+}
+.done {
+  border-left: 2px solid orangered;
+}
+
+table.table-striped tbody tr:nth-of-type(odd) {
+  background-color: #fff;
+}
+table.table-striped tbody tr:nth-of-type(even) {
+  background-color: #f9fbfd;
+}
+
+.table {
+  tr {
+    td {
+      height: 50px;
+      .scheduler {
+        &__row {
+          cursor: pointer;
+        }
+        &__edit {
+          padding: 0 1rem;
+        }
+      }
+      .text {
+        font-size: 10px;
+        &__main {
+          font-size: 10px;
+        }
+      }
+      .table-wrapper {
+        min-height: 50px;
+      }
+    }
+    .over {
+      border: 2px dashed gray;
+    }
+  }
+}
+
+.dragzone {
+  cursor: move;
+  position: absolute;
+  top: -5px;
+  left: 7.5px;
+  img {
+    filter: contrast(100%);
+  }
+}
